@@ -34,4 +34,5 @@ into account docstrings/code ect. i.e. [[link]]"
              (kill-buffer))))
 
 (defun create-links-for-org-roam-buffer ()
+  (interactive)
   (create-links-for-org-roam (find-new-links (buffer-string))))
