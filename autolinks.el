@@ -35,5 +35,3 @@ into account docstrings/code ect. i.e. [[link]]"
 
 (defun create-links-for-org-roam-buffer ()
   (create-links-for-org-roam (find-new-links (buffer-string))))
-
-(find-new-links (buffer-string))
