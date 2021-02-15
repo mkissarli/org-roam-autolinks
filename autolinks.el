@@ -36,3 +36,13 @@ into account docstrings/code ect. i.e. [[link]]"
 (defun create-links-for-org-roam-buffer ()
   (interactive)
   (create-links-for-org-roam (find-new-links (buffer-string))))
+
+(defun create-links-for-org-roam-file (file-path)
+  (with-temp-buffer
+    (insert-file-contents file-path)
+    (create-links-for-org-roam-buffer)))
+
+(defun create-links-for-org-roam-folder (dirname)
+  (mapc #'create-links-for-org-roam-file (directory-files-recursively dirname "\\.org$" nil)))
+
+;(create-links-for-org-roam-folder "~/org")
